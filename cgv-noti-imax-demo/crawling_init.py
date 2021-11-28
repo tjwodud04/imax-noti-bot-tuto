@@ -14,7 +14,7 @@ def check_imax():
     response = requests.get(url)
     bs = BeautifulSoup(response.text, 'html.parser')
 
-    chatbot = telegram.Bot(token = '2017009540:AAGQagsDwabu6ilwKrUv1TVZp0divyyJwxk')
+    chatbot = telegram.Bot(token = 'telegram-personal-token')
 
 
     # 타겟: 해당 날짜에 상영중인 영화 목록 하나씩 출력 + <strong> 태그 떼고 출력
@@ -36,12 +36,12 @@ def check_imax():
         result = [word.replace(nullvalue2, '') for word in result]
 
         for movie in result:
-            chatbot.sendMessage(chat_id= 54133053, text = movie + "의 왕십리 IMAX관 예매가 오픈되었습니다.")
+            chatbot.sendMessage(chat_id= telegram-id-number, text = movie + "의 왕십리 IMAX관 예매가 오픈되었습니다.")
             # 오픈된 경우 더이상의 수행 및 메시지 발송을 막음
             sc.pause()
 
     else:
-        chatbot.sendMessage(chat_id= 54133053, text = "아직 오픈된 왕십리 IMAX관 예매가 없습니다.")
+        chatbot.sendMessage(chat_id= telegram-id-number, text = "아직 오픈된 왕십리 IMAX관 예매가 없습니다.")
 
 
 # 스케쥴 구성을 위한 수행부
